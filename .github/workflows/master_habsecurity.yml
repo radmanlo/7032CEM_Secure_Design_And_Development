@@ -50,4 +50,4 @@ jobs:
           app-name: 'HABSecurity'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2A613137225A40499655E8C8ADF6AE6A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4FBEA59205B94662AFC76122776BB5AC }}
