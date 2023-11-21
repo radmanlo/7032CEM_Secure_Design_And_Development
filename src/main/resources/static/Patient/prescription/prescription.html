@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="prescriptionStyle.css">
+    <title>Patient Prescription</title>
+</head>
+<body>
+<form id="Patient Information">
+  <p id="welcome-message"></p>
+  <script>
+    let jsonData = localStorage.getItem("patientDto");
+    let data = JSON.parse(jsonData);
+    if (data && data.firstName && data.lastName) {
+      document.getElementById("welcome-message").textContent = data.firstName + " " + data.lastName + " Prescriptions ";
+    }
+  </script>
+</form>
+
+    <div id="prescriptions-container"></div>
+
+<script src="prescriptionScript.js"></script>
+</body>
+</html>

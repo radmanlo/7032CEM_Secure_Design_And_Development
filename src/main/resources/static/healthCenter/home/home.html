@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="homeStyle.css">
+    <title>Health Center Home Page</title>
+</head>
+<!--<h1>Welcome to Health Center</h1>-->
+<body>
+<form id="HC Information">
+    <p id="welcome-message"></p>
+    <script>
+        let token = getCookie('jwt');
+        fetch(`http://localhost:6060/api/auth/isAuthenticated/HC`,
+            {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                },
+            }
+        ).then(response => {
+            if (response.status === 403){
+                alert("Your Token is expired or you are not sign in please sig in or register first!")
+                window.location.href = "../../index.html";
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+        function getCookie(name) {
+            const cookieValue = document.cookie
+                .split('; ')
+                .find(cookie => cookie.startsWith(name + '='));
+
+            if (cookieValue) {
+                return cookieValue.split('=')[1];
+            }
+
+            return null;
+        }
+        let jsonData = localStorage.getItem("healthCenterDto");
+        let data = JSON.parse(jsonData);
+        if (data && data.name) {
+            document.getElementById("welcome-message").textContent = "Welcome to " + data.name.toUpperCase() + " Health Center Manager Platform";
+        }
+        else{
+            alert("You need to sign in or register at first")
+            window.location.href = "../../index.html";
+        }
+    </script>
+</form>
+<form id="Menu">
+    <input type="button" name="Appointments" id="appoBtn" value="Appointment Center">
+    <br>
+    <input type="button" name="createPres" id="prescriptionBtn" value="Create Prescription">
+
+</form>
+<script>
+    const resAppoBtn = document.getElementById("appoBtn");
+    const prescriptionBtn = document.getElementById("prescriptionBtn");
+
+    resAppoBtn.addEventListener("click", function () {
+        window.location.href = "../appointment/Appointment.html";
+    });
+
+    prescriptionBtn.addEventListener("click", function () {
+        window.location.href = "../prescription/prescription.html";
+    });
+</script>
+</body>
+</html>

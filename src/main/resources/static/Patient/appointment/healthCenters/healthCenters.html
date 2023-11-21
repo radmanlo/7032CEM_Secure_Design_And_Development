@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Centers</title>
+  <link rel="stylesheet" href="healthCentersStyle.css">
+</head>
+<body>
+<form>
+  <p id="welcome-message"></p>
+  <script>
+    let jsonData = localStorage.getItem("patientDto");
+    let data = JSON.parse(jsonData);
+    if (data && data.firstName && data.lastName) {
+      document.getElementById("welcome-message").textContent = data.firstName.toUpperCase() + " " + data.lastName.toUpperCase()
+              + " Please Choose a health Center" ;
+    }
+  </script>
+</form>
+
+<form>
+  <div id="healthCenters-container"></div>
+</form>
+
+<script src="healthCentersScript.js"></script>
+</body>
+</html>

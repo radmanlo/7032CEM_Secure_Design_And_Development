@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href='indexStyle.css'>
+    <title>Welcome Page</title>
+</head>
+<body>
+
+<h1>Welcome to HAB</h1>
+<form id="Menu">
+
+    <input type="button" name="regPa" id="regPa" value="Patient Registration">
+    <br>
+    <input type="button" name="hcReg" id="hcReg" value="Health Center Registration">
+    <br>
+    <input type="button" name="signInPa" id="signInPa" value="Patient Sign In">
+    <br>
+    <input type="button" name="signInHc" id="signInHc" value="Health Center Sign In">
+
+</form>
+<script>
+    // Get references to the buttons by their IDs
+    const registrationP = document.getElementById("regPa");
+    const registrationH = document.getElementById("hcReg");
+    const signInP = document.getElementById("signInPa");
+    const signInH = document.getElementById("signInHc");
+
+    registrationP.addEventListener("click", function () {
+        window.location.href = "register/patient/register.html";
+    });
+
+    registrationH.addEventListener("click", function () {
+        window.location.href = "register/healthCenter/register.html";
+    });
+
+    signInP.addEventListener("click", function () {
+        window.location.href = "signIn/patient/signIn.html";
+    });
+
+    signInH.addEventListener("click", function () {
+        window.location.href = "signIn/healthCenter/signIn.html";
+    });
+</script>
+
+</body>
+</html>

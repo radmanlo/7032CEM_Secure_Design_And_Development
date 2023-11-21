@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="appointmentStyle.css">
+    <title>Health Center Appointments Page</title>
+</head>
+<body>
+<form id="create-appointment">
+    <h1>Create New Appointment</h1>
+    <input type="date" name="date" id="date">
+    <input type="time" name="time" id="time">
+    <button type="submit">Submit</button>
+</form>
+
+<form>
+    <div class="output-div">
+        <h1>Pending Appointments</h1>
+        <div id="pending-container"></div>
+        <h1>Empty Appointments</h1>
+        <div id="empty-container"></div>
+        <h1>Accepted Appointments</h1>
+        <div id="accepted-container"></div>
+        <h1>Rejected Appointments</h1>
+        <div id="rejected-container"></div>
+        <h1>Canceled Appointments</h1>
+        <div id="canceled-container"></div>
+    </div>
+</form>
+<script src="appointmentScript.js"></script>
+</body>
+</html>

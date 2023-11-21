@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="homeStyle.css">
+    <title>User Home Page</title>
+</head>
+<body>
+<div>
+    <form id="Patient Information">
+        <p id="welcome-message"></p>
+        <script>
+            let token = getCookie('jwt');
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for(let i = 0; i <ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) === 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+            fetch(`http://localhost:6060/api/auth/isAuthenticated/patient`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                    },
+                }
+            ).then(response => {
+                if (response.status === 403){
+                    alert("Your Token is expired or you are not sign in please sig in or register first!")
+                    window.location.href = "../../index.html";
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+            let jsonData = localStorage.getItem("patientDto");
+            let data = JSON.parse(jsonData);
+            if (data && data.firstName && data.lastName) {
+                document.getElementById("welcome-message").textContent = "Welcome " + data.firstName.toUpperCase()
+                    + " " + data.lastName.toUpperCase();
+            }
+            else{
+                alert("Your Token is expired or you are not sign in please sig in or register first!")
+                window.location.href = "../../../index.html";
+            }
+        </script>
+    </form>
+
+    <form id="Menu">
+
+        <input type="button" name="makeAppo" id="makeAppoBtn" value="Make Appointment">
+        <br>
+        <input type="button" name="resAppo" id="resAppoBtn" value="Appointment Result">
+        <br>
+        <input type="button" name="prescription" id="prescriptionBtn" value="Prescription">
+
+    </form>
+    <script>
+
+        const makeAppoBtn = document.getElementById("makeAppoBtn");
+        const resAppoBtn = document.getElementById("resAppoBtn");
+        const prescriptionBtn = document.getElementById("prescriptionBtn");
+
+        makeAppoBtn.addEventListener("click", function () {
+            window.location.href = "../appointment/healthCenters/healthCenters.html";
+        });
+
+        resAppoBtn.addEventListener("click", function () {
+            window.location.href = "../appointment/resAppo/resAppo.html";
+        });
+
+        prescriptionBtn.addEventListener("click", function () {
+            window.location.href = "../prescription/prescription.html";
+        });
+    </script>
+</div>
+
+</body>
+</html>

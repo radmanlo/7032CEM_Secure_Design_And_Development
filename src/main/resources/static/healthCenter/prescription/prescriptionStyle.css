@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccc;
+    margin: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+}
+
+#finding-patient {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    padding: 20px;
+    margin: 20px ;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#patient-container,
+#prescriptions-container,
+#create-prescription-container,
+#update-container {
+    margin-bottom: 20px;
+}
+
+.patient-card,
+.prescription-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.field-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.field-value {
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.submit-prescription-button,
+.submit-alldis-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit-prescription-button:hover,
+.submit-alldis-button:hover {
+    background-color: #45a049;
+}

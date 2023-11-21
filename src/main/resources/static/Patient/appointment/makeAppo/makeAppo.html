@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Appointment</title>
+    <link rel="stylesheet" href="makeAppStyle.css">
+</head>
+<body>
+<form>
+    <p id="welcome-message"></p>
+    <script>
+        let jsonData = localStorage.getItem("patientDto");
+        let data = JSON.parse(jsonData);
+        if (data && data.firstName && data.lastName) {
+            document.getElementById("welcome-message").textContent = "Make Appointment " + data.firstName.toUpperCase()
+                + " " + data.lastName.toUpperCase();
+        }
+    </script>
+</form>
+
+<form>
+    <div id="healthCenter-container"></div>
+
+    <h1>Empty Appointments</h1>
+    <div id="empty-container"></div>
+</form>
+
+<script src="makeAppoScript.js"></script>
+</body>
+</html>

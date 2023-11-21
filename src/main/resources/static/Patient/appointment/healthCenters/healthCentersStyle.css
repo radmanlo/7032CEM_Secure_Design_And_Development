@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccc;
+    text-align: center;
+    margin: 0;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.healthCenters-card {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#welcome-message {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.field-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.field-value {
+    margin-left: 30px;
+}
+
+.healthCenter-card div {
+    margin-bottom: 5px;
+}
+
+.apply-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 210px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.apply-button:hover {
+    background-color: #0056b3;
+}

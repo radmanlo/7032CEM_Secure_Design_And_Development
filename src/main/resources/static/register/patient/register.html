@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="registerStyle.css">
+    <title>Patient Register</title>
+</head>
+
+<body>
+<form id="register-form">
+    <h1>Patient Registration</h1>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+    <br>
+    <br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+    <br>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <br>
+    <br>
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" required>
+    <br>
+    <br>
+    <label for="rPassword">Repeat Password:</label>
+    <input type="text" id="rPassword" name="rPassword" required>
+    <br>
+    <br>
+    <label for="allergies">Allergies:</label>
+    <textarea id="allergies" name="allergies" rows="5" required></textarea>
+    <br>
+    <br>
+    <label for="diseases">Diseases:</label>
+    <textarea id="diseases" name="diseases" rows="5" required></textarea>
+    <br>
+    <br>
+    <div class="checkpoint">
+        <label for="consent">I consent that HAB application store my information for healthcare purposes: </label>
+        <input type="checkbox" name="consent" id="consent" value=1>
+    </div>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<script src="registerScript.js"></script>
+</body>
+</html>

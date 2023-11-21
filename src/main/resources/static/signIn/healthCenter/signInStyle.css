@@ -1,0 +1,61 @@
+/* Apply styles to the body for background color */
+body {
+    background-color: #ccc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the h1 header */
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Apply styles to the form container */
+#signIn-form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style labels for form fields */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style text input fields */
+input[type="text"],
+input[type="password"] {
+    width: 93%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Change button background color on hover */
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

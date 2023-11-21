@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="resAppoStyle.css">
+    <title>Appointment Result</title>
+</head>
+<body>
+<form id="Patient Information">
+  <p id="welcome-message"></p>
+  <script>
+    let jsonData = localStorage.getItem("patientDto");
+    let data = JSON.parse(jsonData);
+    if (data && data.firstName && data.lastName) {
+      document.getElementById("welcome-message").textContent = "Your Appointments " + data.firstName.toUpperCase()
+          + " " + data.lastName.toUpperCase();
+    }
+  </script>
+</form>
+<form>
+
+    <h1>Pending Appointments</h1>
+    <div id="pending-container"></div>
+    <h1>Accepted Appointments</h1>
+    <div id="accepted-container"></div>
+    <h1>Rejected Appointments</h1>
+    <div id="rejected-container"></div>
+    <h1>Canceled Appointments</h1>
+    <div id="canceled-container"></div>
+
+</form>
+<script src="resAppoScript.js"></script>
+</body>
+</html>
