@@ -11,7 +11,7 @@
     <p id="welcome-message"></p>
     <script>
         let token = getCookie('jwt');
-        fetch(`http://localhost:6060/api/auth/isAuthenticated/HC`,
+        fetch(`https://habsecurity.azurewebsites.net/api/auth/isAuthenticated/HC`,
             {
                 method: "GET",
                 headers: {

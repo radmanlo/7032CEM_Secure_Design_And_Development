@@ -3,7 +3,7 @@ let data = JSON.parse(jsonData);
 let token = getCookie('jwt');
 // console.log("data => " + data)
 
-fetch(`http://localhost:6060/api/auth/isAuthenticated/HC`,
+fetch(`https://habsecurity.azurewebsites.net/api/auth/isAuthenticated/HC`,
     {
         method: "GET",
         headers: {
@@ -35,7 +35,7 @@ document.addEventListener ('DOMContentLoaded', function () {
                 time: formData.get("time")
             }
             console.log(newAppo)
-            fetch(`http://localhost:6060/api/appointment/create`,
+            fetch(`https://habsecurity.azurewebsites.net/api/appointment/create`,
                 {
                     method: "POST",
                     headers: {
@@ -68,7 +68,7 @@ document.addEventListener ('DOMContentLoaded', function () {
 fetchApiAppointment()
 
 function fetchApiAppointment(){
-    let apiUrlGet = `http://localhost:6060/api/appointment/hc/allAppointments?hcEmail=${data.email}`
+    let apiUrlGet = `https://habsecurity.azurewebsites.net/api/appointment/hc/allAppointments?hcEmail=${data.email}`
     fetch(apiUrlGet, {
         method: "GET",
         headers: {
@@ -116,7 +116,7 @@ function createAppointmentCard(appointment){
             event.preventDefault();
             let confirmation = window.confirm("Are you sure you want to Delete this Appointment?");
             if (confirmation) {
-                fetch(`http://localhost:6060/api/appointment/delete?appoId=${appointment.id}`,
+                fetch(`https://habsecurity.azurewebsites.net/api/appointment/delete?appoId=${appointment.id}`,
                     {
                         method: "DELETE",
                         headers: {
@@ -174,7 +174,7 @@ function createAppointmentCard(appointment){
                     id: appointment.id,
                     status: "CANCELED"
                 }
-                fetch(`http://localhost:6060/api/appointment/update`,
+                fetch(`https://habsecurity.azurewebsites.net/api/appointment/update`,
                     {
                         method: "PUT",
                         headers: {
@@ -234,7 +234,7 @@ function createAppointmentCard(appointment){
                     id: appointment.id,
                     status: "ACCEPTED"
                 }
-                fetch(`http://localhost:6060/api/appointment/update`,
+                fetch(`https://habsecurity.azurewebsites.net/api/appointment/update`,
                     {
                         method: "PUT",
                         headers: {
@@ -282,7 +282,7 @@ function createAppointmentCard(appointment){
                     id: appointment.id,
                     status: "REJECTED"
                 }
-                fetch(`http://localhost:6060/api/appointment/update`,
+                fetch(`https://habsecurity.azurewebsites.net/api/appointment/update`,
                     {
                         method: "PUT",
                         headers: {

@@ -2,7 +2,7 @@ let token = getCookie('jwt');
 let jsonData = localStorage.getItem("healthCenterDto");
 let data = JSON.parse(jsonData);
 
-fetch(`http://localhost:6060/api/auth/isAuthenticated/HC`,
+fetch(`https://habsecurity.azurewebsites.net/api/auth/isAuthenticated/HC`,
     {
         method: "GET",
         headers: {
@@ -28,7 +28,7 @@ document.addEventListener ('DOMContentLoaded', function () {
 })
 
 function fetchPatient(email){
-    fetch(`http://localhost:6060/api/patient/getByEmail?email=${email}`,
+    fetch(`https://habsecurity.azurewebsites.net/api/patient/getByEmail?email=${email}`,
         {
             method: "GET",
             headers: {
@@ -88,7 +88,7 @@ function createPatientCard(patient){
     `;
     patientCard.querySelector(`.past-prescription-button`).addEventListener('click', ()=> {
         event.preventDefault();
-        let apiUrl = `http://localhost:6060/api/patient/getPrescription?patientEmail=${patient.email}`
+        let apiUrl = `https://habsecurity.azurewebsites.net/api/patient/getPrescription?patientEmail=${patient.email}`
         fetch(apiUrl, {
             method: "GET",
             headers: {
@@ -157,7 +157,7 @@ function createPatientCard(patient){
                     illness: newPrescription.get('illness'),
                     medicine: newPrescription.get('medicine')
                 }
-                fetch(`http://localhost:6060/api/patient/addPrescription?patientEmail=${patient.email}`,
+                fetch(`https://habsecurity.azurewebsites.net/api/patient/addPrescription?patientEmail=${patient.email}`,
                     {
                         method: "POST",
                         headers: {
@@ -217,7 +217,7 @@ function createPatientCard(patient){
                     allergies: newAllDis.get("allergies"),
                     diseases: newAllDis.get("diseases")
                 }
-                fetch(`http://localhost:6060/api/patient/update/allDis`,
+                fetch(`https://habsecurity.azurewebsites.net/api/patient/update/allDis`,
                     {
                         method: "PUT",
                         headers: {
