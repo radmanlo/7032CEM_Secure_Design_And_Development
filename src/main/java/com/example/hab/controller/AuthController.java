@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
+
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -44,6 +44,7 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @PostMapping("/patient/create")
     public ResponseEntity<PatientDto> registerPatient (@Valid @RequestBody PatientDto patientDto){
         try{
