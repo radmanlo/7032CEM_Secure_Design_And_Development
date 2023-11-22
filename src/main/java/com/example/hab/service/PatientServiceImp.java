@@ -35,7 +35,7 @@ public class PatientServiceImp implements PatientService {
         Optional<Patient> foundPatient = patientRepository.findUserByEmail(email);
         if (foundPatient.isPresent()) {
             String allergiesDecrypted = "";
-            String diseasesEncrypted = "";
+            String diseasesDecrypted = "";
             if (!foundPatient.get().getAllergies().isEmpty()) {
                 try {
                     allergiesDecrypted = encryptionService.decrypt(foundPatient.get().getAllergies());
@@ -45,7 +45,7 @@ public class PatientServiceImp implements PatientService {
             }
             if (!foundPatient.get().getDiseases().isEmpty()) {
                 try {
-                    diseasesEncrypted = encryptionService.decrypt(foundPatient.get().getDiseases());
+                    diseasesDecrypted = encryptionService.decrypt(foundPatient.get().getDiseases());
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
@@ -55,8 +55,8 @@ public class PatientServiceImp implements PatientService {
                     .email(foundPatient.get().getEmail())
                     .firstName(foundPatient.get().getFirstName())
                     .lastName(foundPatient.get().getLastName())
-                    .diseases(allergiesDecrypted.isEmpty() ? foundPatient.get().getDiseases() : allergiesDecrypted )
-                    .allergies(diseasesEncrypted.isEmpty() ? foundPatient.get().getAllergies() : diseasesEncrypted )
+                    .allergies(allergiesDecrypted.isEmpty() ? foundPatient.get().getAllergies() : allergiesDecrypted )
+                    .diseases(diseasesDecrypted.isEmpty() ? foundPatient.get().getDiseases() : diseasesDecrypted )
                     .consent(foundPatient.get().isConsent())
                     .build();
         }
