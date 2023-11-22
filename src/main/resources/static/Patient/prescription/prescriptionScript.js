@@ -36,7 +36,7 @@ function getCookie(cname) {
 }
 
 function fetchApiPrescription(){
-    let apiUrl = `https://habsecurity.azurewebsites.net/getPrescription?patientEmail=${patientDto.email}`
+    let apiUrl = `https://habsecurity.azurewebsites.net/api/patient/getPrescription?patientEmail=${patientDto.email}`
     fetch(apiUrl, {
         method: "GET", // or "POST", "PUT", etc., depending on the HTTP method required by your API
         headers: {

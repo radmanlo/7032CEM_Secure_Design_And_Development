@@ -40,7 +40,7 @@ function getCookie(cname) {
 }
 
 function fetchApiAppointmentsHC(){
-    let apiUrlGet = `https://habsecurity.azurewebsites.net/appointment/hc/allAppointments?hcEmail=${healthCenterDto.email}`
+    let apiUrlGet = `https://habsecurity.azurewebsites.net/api/appointment/hc/allAppointments?hcEmail=${healthCenterDto.email}`
     fetch(apiUrlGet, {
         method: "GET",
         headers: {
