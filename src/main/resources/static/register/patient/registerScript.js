@@ -12,9 +12,9 @@ document.addEventListener ('DOMContentLoaded', function () {
                     password: formData.get("password"),
                     allergies: formData.get("allergies"),
                     diseases: formData.get("diseases"),
-                    consent: formData.get("consent") === 1
+                    consent: formData.get("consent   http://localhost:6060/api/auth/patient/create") === 1
                 }
-                fetch("http://localhost:6060/api/auth/patient/create", {
+                fetch("api/auth/patient/", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
