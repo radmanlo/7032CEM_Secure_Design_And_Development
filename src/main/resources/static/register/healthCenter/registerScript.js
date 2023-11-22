@@ -9,7 +9,7 @@ document.addEventListener ('DOMContentLoaded', function () {
                 email: formData.get("email"),
                 password: formData.get("password")
             }
-            fetch("http://localhost:6060/api/auth/hc/create",{
+            fetch("https://habsecurity.azurewebsites.net/api/auth/hc/create",{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

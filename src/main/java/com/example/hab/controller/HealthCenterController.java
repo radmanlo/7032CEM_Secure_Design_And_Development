@@ -21,7 +21,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
 @RestController
 @RequestMapping("/api/healthCenter")
 @RequiredArgsConstructor
@@ -29,6 +28,7 @@ public class HealthCenterController {
 
     private final HealthCenterService healthCenterService;
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/getAll")
     public ResponseEntity<List<HealthCenterDto>> getAllHealthCenters (){
         try {
@@ -122,6 +122,7 @@ public class HealthCenterController {
 //        }
 //    }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @DeleteMapping("/delete")
     public ResponseEntity<HealthCenterDto> deleteHealthCenter (@RequestParam String healthCenter_id){
         try {

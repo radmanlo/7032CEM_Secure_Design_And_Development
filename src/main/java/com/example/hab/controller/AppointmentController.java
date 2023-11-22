@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
 @RestController
 @RequestMapping("/api/appointment")
 @RequiredArgsConstructor
 public class AppointmentController {
     private final AppointmentService appointmentService;
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/hc/allAppointments")
     public ResponseEntity<List<AppointmentDto>> allAppointmentsHC (@RequestParam String hcEmail){
         try {
@@ -32,6 +32,7 @@ public class AppointmentController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/patient/allAppointments")
     public ResponseEntity<List<AppointmentDto>> allAppointmentPatient (@RequestParam String patientEmail){
         try{
@@ -43,6 +44,7 @@ public class AppointmentController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/getAppointmentById")
     public ResponseEntity<AppointmentDto> getAppointmentById (@RequestParam String appoId){
         try {
@@ -57,6 +59,7 @@ public class AppointmentController {
     }
 
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @PostMapping("/create")
     public ResponseEntity<AppointmentDto> createAppointment ( @Valid @RequestBody AppointmentDto appointmentDto,
                                                               @RequestHeader("Authorization") String header){
@@ -72,6 +75,7 @@ public class AppointmentController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @PutMapping("/update")
     public ResponseEntity<AppointmentDto> updateAppointment (@RequestBody AppointmentDto appointmentDto){
         try {
@@ -85,6 +89,7 @@ public class AppointmentController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @DeleteMapping("/delete")
     public ResponseEntity<AppointmentDto> deleteAppointment (@RequestParam String appoId){
         try {

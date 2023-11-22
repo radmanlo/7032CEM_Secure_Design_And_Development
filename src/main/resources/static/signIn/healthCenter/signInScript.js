@@ -8,7 +8,7 @@ document.addEventListener ('DOMContentLoaded', function () {
 
         const formData = new FormData(form);
 
-        fetch('http://localhost:6060/api/auth/hc?email=' + formData.get('email')
+        fetch('https://habsecurity.azurewebsites.net/api/auth/hc?email=' + formData.get('email')
             +'&password='+formData.get('password')
         ).then(respond =>{
             if (respond.status === 302){

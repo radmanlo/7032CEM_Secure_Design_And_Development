@@ -4,7 +4,7 @@ let token = getCookie('jwt');
 let patientDto = JSON.parse(jsonData);
 jsonData = localStorage.getItem("healthCenterDto");
 let healthCenterDto = JSON.parse(jsonData);
-fetch(`http://localhost:6060/api/auth/isAuthenticated/patient`,
+fetch(`https://habsecurity.azurewebsites.net/api/auth/isAuthenticated/patient`,
     {
         method: "GET",
         headers: {
@@ -40,7 +40,7 @@ function getCookie(cname) {
 }
 
 function fetchApiAppointmentsHC(){
-    let apiUrlGet = `http://localhost:6060/api/appointment/hc/allAppointments?hcEmail=${healthCenterDto.email}`
+    let apiUrlGet = `https://habsecurity.azurewebsites.net/appointment/hc/allAppointments?hcEmail=${healthCenterDto.email}`
     fetch(apiUrlGet, {
         method: "GET",
         headers: {
@@ -90,7 +90,7 @@ function createAppointmentCard(appointment){
                     },
                     status: "PENDING"
                 }
-                fetch(`http://localhost:6060/api/appointment/update`,
+                fetch(`https://habsecurity.azurewebsites.net/api/appointment/update`,
                     {
                         method: "PUT",
                         headers: {

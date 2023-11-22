@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
+
 @RestController
 @RequestMapping("/api/patient")
 @RequiredArgsConstructor
@@ -25,6 +25,7 @@ public class PatientController {
 
     private final PatientService patientService;
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/getByEmail")
     public ResponseEntity<PatientDto> getPatientByEmail (@RequestParam String email){
         try{
@@ -40,6 +41,7 @@ public class PatientController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @PutMapping("/update/allDis")
     public ResponseEntity<PatientDto> updateAllergyDiseases (@RequestBody PatientDto patientDto){
         try {
@@ -53,6 +55,7 @@ public class PatientController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @PostMapping("/addPrescription")
     public ResponseEntity<PatientDto> addPrescription (@RequestParam String patientEmail,
                                                        @Valid @RequestBody Prescription prescription){
@@ -70,6 +73,7 @@ public class PatientController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/getPrescription")
     public ResponseEntity<List<Prescription>> getAllPatientPrescription (@RequestParam String patientEmail){
         try {
@@ -85,6 +89,7 @@ public class PatientController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @DeleteMapping("/delete")
     public ResponseEntity<PatientDto> deleteUser (@RequestParam String email){
         try {

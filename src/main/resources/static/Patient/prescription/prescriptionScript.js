@@ -1,7 +1,7 @@
 
 let token = getCookie('jwt');
 let patientDto = JSON.parse(jsonData);
-fetch(`http://localhost:6060/api/auth/isAuthenticated/patient`,
+fetch(`https://habsecurity.azurewebsites.net/api/auth/isAuthenticated/patient`,
     {
         method: "GET",
         headers: {
@@ -36,7 +36,7 @@ function getCookie(cname) {
 }
 
 function fetchApiPrescription(){
-    let apiUrl = `http://localhost:6060/api/patient/getPrescription?patientEmail=${patientDto.email}`
+    let apiUrl = `https://habsecurity.azurewebsites.net/getPrescription?patientEmail=${patientDto.email}`
     fetch(apiUrl, {
         method: "GET", // or "POST", "PUT", etc., depending on the HTTP method required by your API
         headers: {

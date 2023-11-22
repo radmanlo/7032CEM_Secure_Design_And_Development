@@ -1,10 +1,10 @@
 
 
-let apiUrl = "http://localhost:6060/api/healthCenter/getAll"
+let apiUrl = "https://habsecurity.azurewebsites.net/api/healthCenter/getAll"
 let token = getCookie('jwt');
 // console.log("token => " + token);
 
-fetch(`http://localhost:6060/api/auth/isAuthenticated/patient`,
+fetch(`https://habsecurity.azurewebsites.net/api/auth/isAuthenticated/patient`,
     {
         method: "GET",
         headers: {

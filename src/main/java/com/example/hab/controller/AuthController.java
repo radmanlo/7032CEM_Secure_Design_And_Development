@@ -32,6 +32,7 @@ public class AuthController {
 
     private final PatientService patientService;
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @PostMapping("/hc/create")
     public ResponseEntity<HealthCenterDto> createHealthCenter (@Valid @RequestBody HealthCenterDto healthCenterDto){
         try{
@@ -59,6 +60,7 @@ public class AuthController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/patient")
     public ResponseEntity<PatientDto> authPatient (@RequestParam String email,
                                                    @RequestParam String password){
@@ -75,6 +77,7 @@ public class AuthController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/hc")
     public ResponseEntity<HealthCenterDto> authHC (@RequestParam String email,
                                                    @RequestParam String password){
@@ -91,6 +94,7 @@ public class AuthController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/isAuthenticated/HC")
     public ResponseEntity<Boolean> isAuthenticatedHC (@RequestHeader("Authorization") String token){
         try {
@@ -107,6 +111,7 @@ public class AuthController {
         }
     }
 
+    @CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
     @GetMapping("/isAuthenticated/patient")
     public ResponseEntity<Boolean> isAuthenticatedPatient (@RequestHeader("Authorization") String token){
         try {
