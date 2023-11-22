@@ -12,8 +12,8 @@ document.addEventListener ('DOMContentLoaded', function () {
                     password: formData.get("password"),
                     allergies: formData.get("allergies"),
                     diseases: formData.get("diseases"),
-                    consent: formData.get("consent   http://localhost:6060/api/auth/patient/create") === 1
-                }
+                    consent: formData.get("consent") === 1
+                } //   http://localhost:6060/api/auth/patient/create
                 fetch("api/auth/patient/create", {
                     method: 'POST',
                     headers: {

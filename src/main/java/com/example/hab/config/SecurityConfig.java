@@ -23,16 +23,16 @@ public class SecurityConfig {
         http
                 .csrf(csrf->csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/register/patient/api/auth/**",
-                                "/index.html",
-                                "/indexStyle.css",
-                                "/api/auth/**",
-                                "/signIn/**",
-                                "/register/**",
-                                "/Patient/**",
-                                "/healthCenter/**",
-                                "/favicon.ico")
+                        .requestMatchers("/**")
+//                                "/register/patient/api/auth/**",
+//                                "/index.html",
+//                                "/indexStyle.css",
+//                                "/api/auth/**",
+//                                "/signIn/**",
+//                                "/register/**",
+//                                "/Patient/**",
+//                                "/healthCenter/**",
+//                                "/favicon.ico")
                         .permitAll()
                         .anyRequest()
                         .authenticated()
