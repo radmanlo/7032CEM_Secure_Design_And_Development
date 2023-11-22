@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@CrossOrigin(origins = "https://habsecurity.azurewebsites.net")
 @RestController
 @RequestMapping("/api/healthCenter")
 @RequiredArgsConstructor
