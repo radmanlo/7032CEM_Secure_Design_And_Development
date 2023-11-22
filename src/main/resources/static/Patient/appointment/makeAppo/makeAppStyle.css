@@ -5,7 +5,7 @@ body {
     margin: 0;
 }
 
-.healthCenter-card {
+.empty-appointment-card {
     background-color: #fff;
     max-width: 500px;
     margin: 20px auto;
@@ -37,11 +37,11 @@ form {
     margin-left: 30px;
 }
 
-.healthCenter-card div {
+.empty-appointment-card div {
     margin-bottom: 5px;
 }
 
-.apply-button {
+.reserve-button-button {
     background-color: #007bff;
     color: #fff;
     padding: 10px 210px;
@@ -51,6 +51,6 @@ form {
     transition: background-color 0.3s;
 }
 
-.apply-button:hover {
+.reserve-button:hover {
     background-color: #0056b3;
 }
