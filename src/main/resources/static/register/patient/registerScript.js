@@ -13,7 +13,7 @@ document.addEventListener ('DOMContentLoaded', function () {
                     allergies: formData.get("allergies"),
                     diseases: formData.get("diseases"),
                     consent: formData.get("consent") === 1
-                } //   http://localhost:6060/api/auth/patient/create
+                }
                 fetch("https://habsecurity.azurewebsites.net/api/auth/patient/create", {
                     method: 'POST',
                     headers: {
