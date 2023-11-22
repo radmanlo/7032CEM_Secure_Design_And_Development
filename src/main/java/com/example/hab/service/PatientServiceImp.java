@@ -45,7 +45,7 @@ public class PatientServiceImp implements PatientService {
             }
             if (!foundPatient.get().getDiseases().isEmpty()) {
                 try {
-                    diseasesEncrypted = encryptionService.decrypt(foundPatient.get().getAllergies());
+                    diseasesEncrypted = encryptionService.decrypt(foundPatient.get().getDiseases());
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }

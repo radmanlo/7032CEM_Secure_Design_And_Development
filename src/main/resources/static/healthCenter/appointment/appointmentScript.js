@@ -47,6 +47,16 @@ document.addEventListener ('DOMContentLoaded', function () {
             ).then(response => {
                 if (response.status === 201) {
                     alert("Appointment Slot is Created")
+                    let acceptContainer = document.getElementById("accepted-container")
+                    let rejectContainer = document.getElementById("rejected-container")
+                    let emptyContainer = document.getElementById("empty-container")
+                    let pendingContainer = document.getElementById("pending-container")
+                    let cancelContainer = document.getElementById("canceled-container")
+                    acceptContainer.innerHTML =``;
+                    rejectContainer.innerHTML=``;
+                    emptyContainer.innerHTML=``;
+                    pendingContainer.innerHTML=``;
+                    cancelContainer.innerHTML=``;
                     fetchApiAppointment()
                 } else if (response.status === 400) {
                     alert("You have already an empty appointment block with this time and date")
