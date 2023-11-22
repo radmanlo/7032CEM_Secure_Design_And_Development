@@ -14,6 +14,6 @@ public interface AppointmentRepository extends MongoRepository<Appointment, Stri
                                                                 String time,
                                                                 Status status);
     Optional<List<Appointment>> findByPatientEmail (String patientEmail);
-
+    Optional<List<Appointment>> findByHealthCenterEmail(String hcEmail);
     Optional<Appointment> deleteAppointmentById (String appoId);
 }

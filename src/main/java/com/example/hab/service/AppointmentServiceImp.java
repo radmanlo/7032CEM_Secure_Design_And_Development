@@ -54,30 +54,33 @@ public class AppointmentServiceImp implements AppointmentService{
 
     @Override
     public List<AppointmentDto> getAllAppointmentHC (String HCEmail) {
-        List<Appointment> appointments = appointmentRepository.findAll();
-        List<AppointmentDto> appointmentDtos = new ArrayList<AppointmentDto>();
-        for (Appointment appo: appointments){
-            appointmentDtos.add(
-                    AppointmentDto.builder()
-                            .id(appo.getId())
-                            .healthCenterDto(HealthCenterDto.builder()
-                                    .name(appo.getHealthCenter().getName())
-                                    .email(appo.getHealthCenter().getEmail())
-                                    .role(appo.getHealthCenter().getRole())
-                                    .build())
-                            .patientDto(appo.getPatient() != null ? PatientDto.builder()
-                                    .email(appo.getPatient().getEmail())
-                                    .firstName(appo.getPatient().getFirstName())
-                                    .lastName(appo.getPatient().getLastName())
-                                    .build() :
-                                    null)
-                            .date(appo.getDate())
-                            .time(appo.getTime())
-                            .status(appo.getStatus())
-                            .build()
-            );
+        Optional<List<Appointment>> appointments = appointmentRepository.findByHealthCenterEmail(HCEmail);
+        if (appointments.isPresent()){
+            List<AppointmentDto> appointmentDtos = new ArrayList<AppointmentDto>();
+            for (Appointment appo: appointments.get()){
+                appointmentDtos.add(
+                        AppointmentDto.builder()
+                                .id(appo.getId())
+                                .healthCenterDto(HealthCenterDto.builder()
+                                        .name(appo.getHealthCenter().getName())
+                                        .email(appo.getHealthCenter().getEmail())
+                                        .role(appo.getHealthCenter().getRole())
+                                        .build())
+                                .patientDto(appo.getPatient() != null ? PatientDto.builder()
+                                        .email(appo.getPatient().getEmail())
+                                        .firstName(appo.getPatient().getFirstName())
+                                        .lastName(appo.getPatient().getLastName())
+                                        .build() :
+                                        null)
+                                .date(appo.getDate())
+                                .time(appo.getTime())
+                                .status(appo.getStatus())
+                                .build()
+                );
+            }
+            return appointmentDtos;
         }
-        return appointmentDtos;
+        return null;
     }
 
     @Override
