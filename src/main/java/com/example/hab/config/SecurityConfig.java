@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
 
 @Configuration
 @EnableWebSecurity
@@ -23,23 +24,25 @@ public class SecurityConfig {
         http
                 .csrf(csrf->csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/**")
-//                                "/register/patient/api/auth/**",
-//                                "/index.html",
-//                                "/indexStyle.css",
-//                                "/api/auth/**",
-//                                "/signIn/**",
-//                                "/register/**",
-//                                "/Patient/**",
-//                                "/healthCenter/**",
-//                                "/favicon.ico")
+                        .requestMatchers(
+                                "https://habsecurity.azurewebsites.net/**",
+                                "/register/patient/api/auth/**",
+                                "/index.html",
+                                "/indexStyle.css",
+                                "/api/auth/**",
+                                "/signIn/**",
+                                "/register/**",
+                                "/Patient/**",
+                                "/healthCenter/**",
+                                "/favicon.ico")
                         .permitAll()
                         .anyRequest()
                         .authenticated()
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+                .cors(request -> new CorsConfiguration().applyPermitDefaultValues());
 
         return http.build();
     }
