@@ -24,7 +24,7 @@ public class SecurityConfig {
                 .csrf(csrf->csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "https://habsecurity.azurewebsites.net/register/**",
+                                "/register/patient/api/auth/**",
                                 "/index.html",
                                 "/indexStyle.css",
                                 "/api/auth/**",
