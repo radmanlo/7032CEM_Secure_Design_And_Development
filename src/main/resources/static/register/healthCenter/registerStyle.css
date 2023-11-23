@@ -5,7 +5,6 @@ body {
     padding: 20px;
 }
 
-/* Apply styles to the form container */
 #register-hc-form{
     width: 500px;
     margin: 0 auto;
@@ -19,18 +18,17 @@ h1 {
     text-align: center;
     font-size: 30px;
     margin-bottom: 30px;
-    color: #333; /* Customize the color as needed */
+    color: #333;
 }
 
-/* Style labels for form fields */
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* Style text input fields */
 input[type="text"],
+input[type="password"],
 textarea {
     width: 93%;
     padding: 10px;
@@ -40,14 +38,12 @@ textarea {
     font-size: 14px;
 }
 
-/* Style checkboxes */
 .checkpoint {
     display: flex;
     align-items: center;
     margin-top: 10px;
 }
 
-/* Style the submit button */
 button[type="submit"] {
     display: block;
     width: 98%;
@@ -60,7 +56,6 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-/* Change button background color on hover */
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
